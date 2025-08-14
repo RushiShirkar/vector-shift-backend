@@ -1,5 +1,6 @@
 from functools import lru_cache
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
+from pydantic import Extra
 from typing import List
 import os
 from dotenv import load_dotenv
@@ -13,6 +14,7 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+        extra = Extra.allow
 
 @lru_cache()
 def get_settings() -> Settings:
