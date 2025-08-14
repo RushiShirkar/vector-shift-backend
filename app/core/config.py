@@ -10,7 +10,7 @@ load_dotenv()
 class Settings(BaseSettings):
     app_name: str = "VectorShift Backend"
     debug: bool = True
-    cors_allow_origins: List[str] = [os.getenv("FRONTEND_URL")]
+    cors_allow_origins: List[str] = ["*"]
 
     class Config:
         env_file = ".env"
