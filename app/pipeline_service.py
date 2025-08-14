@@ -1,6 +1,6 @@
 from typing import Dict, List, Set
 import time
-from app.schemas.pipeline import PipelinePayload, PipelineStats
+from app.pipeline_schema import PipelinePayload, PipelineStats
 
 def _has_cycle(graph: Dict[str, List[str]]) -> bool:
     WHITE, GRAY, BLACK = 0, 1, 2
